@@ -42,7 +42,7 @@ function getPlayers() {
     console.log(page_no);
 
     $.ajax({
-        url: "/PlayerScore/ajax.php",
+        url: "./ajax.php",
         type: "GET",
         dataType: "json",
         data: { page: page_no, action: "getusers" },
@@ -74,7 +74,7 @@ $(document).ready(function () {
     $(document).on("submit", "#addform", function (event) {
         event.preventDefault();
         $.ajax({
-            url: "/PlayerScore/ajax.php",
+            url: "./ajax.php",
             type: "POST",
             dataType: "json",
             data: new FormData(this),
@@ -119,7 +119,7 @@ $(document).ready(function () {
         var player_id = $(this).data("id");
 
         $.ajax({
-            url: "/PlayerScore/ajax.php",
+            url: "./ajax.php",
             type: "GET",
             dataType: "json",
             data: { id: player_id, action: "getuser" },
@@ -145,7 +145,7 @@ $(document).ready(function () {
         var player_id = $(this).data("id");
         if (confirm("Are you sure you want to delete this?")) {
             $.ajax({
-                url: "/PlayerScore/ajax.php",
+                url: "./ajax.php",
                 type: "GET",
                 dataType: "json",
                 data: { id: player_id, action: "deleteuser" },
